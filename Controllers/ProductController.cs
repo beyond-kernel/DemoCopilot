@@ -76,8 +76,8 @@ public interface IProductRepository
 public class Product
 {
     public int Id { get; set; }
-    public string Name { get; set; }
-    public string Email { get; set; }
+    public string Name { get; set; } = null!;
+    public string? Email { get; set; }
     public decimal Price { get; set; }
 }
 
@@ -90,7 +90,7 @@ public class ProductContext : DbContext
     {
     }
 
-    public DbSet<Product> Products { get; set; }
+    public DbSet<Product> Products { get; set; } = null!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
